@@ -1,0 +1,17 @@
+<HTML>
+	<HEAD>
+		<SCRIPT>
+			function lanciaDado(){
+				const MAX = 6;
+				var num = Math.trunc(MAX*Math.random() + 1)
+				document.getElementById("txtarea").value = num
+			}
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<INPUT type="button" value="LANCIA" onclick="lanciaDado();" />
+		<BR> <BR>
+		<INPUT type="number" id="txtarea" />
+	</BODY>
+</HTML>
+

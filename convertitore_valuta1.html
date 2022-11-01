@@ -1,0 +1,51 @@
+<HTML>
+	<HEAD>
+		<SCRIPT>
+		function daDollaroaEuro(){
+			const conversione = 1.01;
+			//variabile in input
+			var importoDollaro;
+			//variabile in output
+			var importoEuro;
+			//lettura dati di input
+			importoDollaro= document.getElementById("txtDollaro").value;
+			//elaborazione
+			importoEuro=importoDollaro*conversione;
+			importoEuro=importoEuro.toFixed(2); //invochiao il metodo to fixed della classe float
+            //alert(importoEuro);
+			//assegnare alla casella txteuro il valore importo euro
+			document.getElementById("txtEuro").value = importoEuro;
+			}
+			
+		function daEuroaDollaro(){
+			const conversione = 1.01;
+			//variabile in input
+			var importoDollaro;
+			//variabile in output
+			var importoEuro;
+			//lettura dati di input
+			importoEuro= document.getElementById("txtEuro").value;
+			//elaborazione
+			importoDollaro=importoEuro/conversione;
+			importoDollaro=importoDollaro.toFixed(2); //invochiao il metodo to fixed della classe float
+            //alert(importoEuro);
+			//assegnare alla casella txteuro il valore importo euro
+			document.getElementById("txtDollaro").value = importoDollaro;
+			}
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<FORM>
+		<FIELDSET><LEGEND>CONVERTITORE DI VALUTA </LEGEND>
+			<BR>
+			Dollari:<INPUT type= "number" id="txtDollaro"/>
+			Euro:<INPUT type = "number" id="txtEuro"/>
+			<BR><BR>
+			<INPUT type="button" value="Da $ a euro"
+			onclick = "daDollaroaEuro();"/> 
+			<INPUT type="button" value="Da euro a $" onclick ="daEuroaDollaro();"/>
+			</FIELDSET>
+		</FORM>
+	</BODY>
+</HTML>
+

@@ -1,0 +1,88 @@
+<HTML>
+	 <HEAD>
+		<SCRIPT>
+			//funzione che spiega cosa fa la pagina
+			function benvenuto(){
+				messaggio = "Benvenuto nella pagina di simulazione del lancio di dadi !";
+				alert(messaggio);
+			}
+			
+			function lanciaDado(){
+				
+				//dichiarazione costanti
+				const MAX = 6;
+				
+				//dichiarazione array conta uscite
+				var uscite = new Array();
+				
+				var lanci = prompt("quanti lanci ?");
+				
+				//inizializzare tutti i valori  dell'array uscite a 0
+				for (var i = 0; i < MAX; i++)
+					uscite[i] = 0;
+					
+					//ciclo for che realizzi un numero
+					//di estrazione random pari al numero di lanci inseriti
+					for (var i=0; i < lanci; i++){
+						var num = Math.trunc(MAX*Math.random())+1;
+						//se esce ad esempio la faccia 1 incrementiamo
+						//l'elemento di indice 0, fino alla faccia 6
+						//che corrisponde all'elemento di indice 5
+						uscite[num-1]++;
+					}
+				
+				//assegnare alle caselle di testo numeriche
+				//il conteggio corrispondente dell'uscita
+				
+				//il conteggio si può effettuare anche con ciclo for
+				//in modo più compatto:
+				
+				for (var i = 0; i < MAX; i++){
+					document.getElementById("txtUscita"+(i+1)).value = uscite[i];
+					document.getElementById("txtUscita"+(i+1)+"Perc").value = uscite[i]/lanci*100;
+				}
+				/*
+				document.getElementById("txtUscita1").value = uscite[0];
+				document.getElementById("txtUscita1Perc").value = uscite[0]/lanci*100;
+				document.getElementById("txtUscita2").value = uscite[1];
+				document.getElementById("txtUscita2Perc").value = uscite[1]/lanci*100;
+				document.getElementById("txtUscita3").value = uscite[2];
+				document.getElementById("txtUscita3Perc").value = uscite[2]/lanci*100;
+				document.getElementById("txtUscita4").value = uscite[3];
+				document.getElementById("txtUscita4Perc").value = uscite[3]/lanci*100;
+				document.getElementById("txtUscita5").value = uscite[4];
+				document.getElementById("txtUscita5Perc").value = uscite[4]/lanci*100;
+				document.getElementById("txtUscita6").value = uscite[5];
+				document.getElementById("txtUscita6Perc").value = uscite[5]/lanci*100;
+				*/
+				
+				
+			}
+		</SCRIPT>
+	 
+	 </HEAD>
+	 <BODY onload="benvenuto();">
+	 <INPUT type="button" value = "LANCIA"  onclick= "lanciaDado();"/>
+	 <BR> <BR>
+	 <FIELDSET>
+		numero di uscite 1
+	    <INPUT type="number" id = "txtUscita1"  />
+		 <INPUT type="number" id = "txtUscita1Perc"  />%<BR>
+		numero di uscite 2
+	    <INPUT type="number" id = "txtUscita2" />
+		 <INPUT type="number" id = "txtUscita2Perc"  />%<BR>
+		numero di uscite 3
+	    <INPUT type="number" id = "txtUscita3" />
+		 <INPUT type="number" id = "txtUscita3Perc"  />%<BR>
+		numero di uscite 4
+	    <INPUT type="number" id = "txtUscita4" />
+		 <INPUT type="number" id = "txtUscita4Perc"  />%<BR>
+		numero di uscite 5
+	    <INPUT type="number" id = "txtUscita5" />
+		 <INPUT type="number" id = "txtUscita5Perc"  />%<BR>
+		numero di uscite 6
+	    <INPUT type="number" id = "txtUscita6" />
+		 <INPUT type="number" id = "txtUscita6Perc"  />%<BR>
+	 </FIELDSET>
+	 </BODY>
+</HTML>

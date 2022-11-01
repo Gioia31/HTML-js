@@ -1,0 +1,7 @@
+td {border: 1.5px dashed #c0c0c0; 
+			border-collapse: separate}
+			
+td {padding: 2px 2px 2px 2px}
+td.odd{background: yellow}
+td.even{background: blue}
+td{font-size:32px}

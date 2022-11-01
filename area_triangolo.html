@@ -1,0 +1,37 @@
+<HTML>
+	<HEAD>
+		<SCRIPT>
+		function CalcolaArea(){
+			//variabile in input
+			var valoreBase;
+			//variabile in output
+			var valoreAltezza;
+			var valoreArea;
+			//lettura dati di input
+			valoreBase= Number(document.getElementById("txtBase").value);
+			valoreAltezza= Number(document.getElementById("txtAltezza").value);
+			//elaborazione
+			valoreArea=(valoreBase*valoreAltezza)/2;
+			//assegnare alla casella Area il valore valoreArea
+			document.getElementById("txtArea").value = valoreArea;
+			}
+			
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<FORM>
+		<H1>Programma per calcolare l'area del triangolo</H1>
+			<BR>
+			Base:<INPUT type= "number" id="txtBase"/>
+			<BR><BR>
+			Altezza:<INPUT type = "number" id="txtAltezza"/>
+			<BR><BR>
+			<INPUT type="button" value="CALCOLA AREA"
+			onclick = "CalcolaArea();"/> 
+			<BR><BR>
+			Area:<INPUT type = "number" id="txtArea"/>
+			</FIELDSET>
+		</FORM>
+	</BODY>
+</HTML>
+

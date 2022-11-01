@@ -1,0 +1,7 @@
+table, td, th {border: 1px solid #000; 
+			border-collapse: collapse}
+			
+td, th{padding: 20px 20px 20px 50px}
+tr.odd{background: #ffc0cb}
+tr.even{background: #afeeee}
+tr.titolo{background: #98fb98}
