@@ -1,0 +1,66 @@
+<HTML>
+    <HEAD>
+		<SCRIPT>
+        var nomi = new Array();
+        var cognomi = new Array();
+        var punti = new Array();
+        var ricezioni = new Array();
+        const numeroGiocatori = 2;
+        // 1) funzione inserisciDati(): sul click del pulsante 
+        //"inserisci" chiedi i dati dei 6 giocatori tramite
+        //finestra di prompt e li salva nei 4 array
+        function inserisciDati(){
+            for (var i = 0; i < numeroGiocatori; i++){
+            var n = i+1;
+            nomi[i] = prompt("qual'è il nome del giocatore"+String(n)+"?");
+            cognomi[i] = prompt("qual'è il cognome del giocatore"+String(n)+"?");
+            punti[i] = Number(prompt("quanti punti ha fatto il giocatore"+String(n)+"?"));
+            ricezioni[i] = Number(prompt("quant ricezioni ha effettuato il giocatore"+String(n)+"?"));
+            }
+        }
+        //IMPORTANTISSIMO
+        function visualizzaDati(){
+            var textarea = document.getElementById("textArea");
+            textarea.value = "";
+                for(var i=0; i<numeroGiocatori; i++)
+                {   
+                    textarea.value += "Giocatore " + String(i + 1) + "\n";
+                    textarea.value += "Nome: " + nomi[i] + "\n";
+                    textarea.value += "Cognome: " + cognomi[i] + "\n";
+                    textarea.value += "Punti: " + punti[i] + "\n";
+                    textarea.value += "Ricezioni: " + ricezioni[i] + "\n";
+                    textarea.value += "\n";
+                }
+            }  
+        function maxPunti(){
+            var punti_copy = Arrays.copyOf(punti, punti.length);
+            Arrays.sort(punti);
+            var maxP = punti[punti.length - 1];
+            var indice=0;
+            for (var i = 0; i < numeroGiocatori; i++){
+            if (punti_copy[i]=maxP){
+                indice =i;
+                alert(nomi[i] +" "+cognomi[i]);
+                }
+            }
+        }
+
+        </SCRIPT>
+    </HEAD>
+	<BODY>
+        <FORM>
+        <CENTER>
+		<INPUT type="button" value="inserisci" onclick="inserisciDati();"/>
+		<BR> <BR>
+        <INPUT type="button" value="visualizza"onclick="visualizzaDati();" />
+        <BR> <BR>
+        <INPUT type="button" value="max punti" onclick="maxPunti();"/>
+        <BR> <BR>
+        <INPUT type="button" value="max ricezioni" />
+        <BR> <BR>
+        output:<BR><TEXTAREA id ="textArea"/><BR><BR>
+        </FORM>
+        </CENTER>
+    </BODY>
+</HTML>
+
