@@ -1,0 +1,26 @@
+<HTML>
+	<HEAD>
+		<STYLE> 
+		img{height:60%; width:50%}
+		body{text-align:center}
+		</STYLE>
+		<SCRIPT> /*CONTIENE LE ISTRUZIONI IN C++*/
+			function cambiaImg1(){
+			var nuovaImg="giovinazzo.jpg";
+			document.getElementById("titolo").innerHTML="Giovinazzo";
+			document.getElementById("imgCambia").src="giovinazzo.jpg";
+			}
+			function cambiaImg2(){
+			document.getElementById("titolo").innerHTML="Duomo di Molfetta";
+			document.getElementById("imgCambia").src="molfetta1.jpg";
+			}
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+	<H1 id="titolo">Duomo di Molfetta</H1>
+	<IMG src="molfetta1.jpg" id="imgCambia" 
+	onmouseover="cambiaImg1();"
+	onmouseout="cambiaImg2();" />
+	</BODY>
+</HTML>
+	
