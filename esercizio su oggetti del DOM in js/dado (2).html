@@ -1,0 +1,27 @@
+<HTML>
+    <HEAD>
+		<STYLE>
+			img{width:15%; height:30%}
+			body{text-align:center; background-color:DEEPSKYBLUE}
+		</STYLE>
+        <TITLE>
+            DADO
+        </TITLE>
+        <SCRIPT> 
+            function lancioDado(){
+                const MAX=6;
+                var num =Math.trunc(MAX*Math.random())+1;
+               
+                var nomeFileImg = "img/"+num+".jpg"; 
+                document.getElementById("imgDado").src=nomeFileImg;
+            }
+        </SCRIPT>
+    </HEAD>
+    <BODY>
+            <br>
+            <br>
+            <img id = "imgLancia"  src = "img/lancia.jpg" onclick="lancioDado();" /> 
+            <img id = "imgDado"  src = "img/0.jpg" /> <br>
+            
+    </BODY>
+</HTML>
